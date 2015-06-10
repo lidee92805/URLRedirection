@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c0G-L2-Djs">
-                                <rect key="frame" x="38" y="41" width="160" height="30"/>
+                                <rect key="frame" x="19" y="41" width="160" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMt-9b-406">
-                                <rect key="frame" x="239" y="40" width="46" height="30"/>
+                                <rect key="frame" x="196" y="40" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="wZ8-qw-nNX"/>
                                 </constraints>
@@ -39,21 +39,30 @@
                                 <rect key="frame" x="0.0" y="79" width="334" height="481"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6AY-Tn-K9S">
+                                <rect key="frame" x="255" y="39" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="fnD-r0-zFd"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wOA-Kf-4nc" secondAttribute="bottom" constant="8" symbolic="YES" id="Fj4-qd-kLz"/>
-                            <constraint firstItem="vMt-9b-406" firstAttribute="leading" secondItem="c0G-L2-Djs" secondAttribute="trailing" constant="41" id="Whs-aR-l6E"/>
+                            <constraint firstItem="vMt-9b-406" firstAttribute="leading" secondItem="c0G-L2-Djs" secondAttribute="trailing" constant="17" id="Whs-aR-l6E"/>
                             <constraint firstItem="wOA-Kf-4nc" firstAttribute="top" secondItem="c0G-L2-Djs" secondAttribute="bottom" constant="8" symbolic="YES" id="XkY-BE-o3t"/>
-                            <constraint firstItem="c0G-L2-Djs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="c3Z-Mz-498"/>
-                            <constraint firstItem="c0G-L2-Djs" firstAttribute="leading" secondItem="wOA-Kf-4nc" secondAttribute="leading" constant="38" id="fIl-L2-Z3y"/>
+                            <constraint firstItem="c0G-L2-Djs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="c3Z-Mz-498"/>
+                            <constraint firstItem="c0G-L2-Djs" firstAttribute="leading" secondItem="wOA-Kf-4nc" secondAttribute="leading" constant="19" id="fIl-L2-Z3y"/>
                             <constraint firstItem="vMt-9b-406" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="h0v-RQ-6yB"/>
                             <constraint firstItem="wOA-Kf-4nc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="30" id="mMm-Dr-80V"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vMt-9b-406" secondAttribute="trailing" constant="19" id="n8i-cC-Huu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vMt-9b-406" secondAttribute="trailing" constant="62" id="n8i-cC-Huu"/>
+                            <constraint firstItem="6AY-Tn-K9S" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nzv-TR-bJF"/>
+                            <constraint firstItem="6AY-Tn-K9S" firstAttribute="bottom" secondItem="vMt-9b-406" secondAttribute="bottom" id="unN-GR-e4P"/>
                             <constraint firstItem="c0G-L2-Djs" firstAttribute="baseline" secondItem="vMt-9b-406" secondAttribute="baseline" id="w1e-GR-O6B"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="switchBtn" destination="6AY-Tn-K9S" id="PBs-pi-pj4"/>
                         <outlet property="textField" destination="c0G-L2-Djs" id="Kjz-PT-f2d"/>
                         <outlet property="webView" destination="wOA-Kf-4nc" id="JxJ-UQ-fCl"/>
                     </connections>

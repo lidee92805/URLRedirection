@@ -15,10 +15,11 @@
     [NSURLProtocol registerClass:self];
 }
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
+    NSLog(@"%@",request.URL);
     if ([NSURLProtocol propertyForKey:@"LDHURLProtocolKey" inRequest:request]) {
         return NO;
     }
-    return YES;
+    return [[[NSUserDefaults standardUserDefaults] valueForKey:@"changeNetMode"] boolValue];
 }
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {
     NSMutableURLRequest * mutableRequest = [request mutableCopy];
@@ -32,9 +33,11 @@
     mutableRequest.URL = [URLComponents URL];
     
     return mutableRequest;
+//    return request;
 }
-- (void)startLoading {
-    _connection = [NSURLConnection connectionWithRequest:[[self class] canonicalRequestForRequest:self.request] delegate:self];
+- (void)startLoading {    
+//    _connection = [NSURLConnection connectionWithRequest:self.request delegate:self];
+        _connection = [NSURLConnection connectionWithRequest:[[self class] canonicalRequestForRequest:self.request] delegate:self];
 }
 - (void)stopLoading {
     
